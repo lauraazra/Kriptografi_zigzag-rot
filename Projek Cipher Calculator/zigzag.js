@@ -1,5 +1,5 @@
-function Encrypt() {
-    plaintext = document.getElementById("myInput").value.toLowerCase().replace(/[^a-z]/g, "");  
+function EncryptZigZag() {
+    plaintext = document.getElementById("toEncrypt").value.toLowerCase().replace(/[^a-z]/g, "");  
     if(plaintext.length < 1){ alert("please enter some plaintext"); return; }    
     var key = parseInt(document.getElementById("key").value);
     if(key > Math.floor(2*(plaintext.length-1))){ alert("key is too large for the plaintext length."); return; }  
@@ -17,7 +17,7 @@ function Encrypt() {
     document.getElementById("toDecrypt").value = ciphertext;
 }
 
-function Decrypt(f) {
+function DecryptZigZag(f) {
     ciphertext = document.getElementById("toDecrypt").value.toLowerCase().replace(/[^a-z]/g, "");  
     if(ciphertext.length < 1){ alert("please enter some ciphertext (letters only)"); return; }    
     var key = parseInt(document.getElementById("key").value);
@@ -33,5 +33,5 @@ function Decrypt(f) {
         }
     }
     for(i=line; i<ciphertext.length; i+=2*(key-1)) pt[i] = ciphertext.charAt(k++);
-    document.getElementById("myInput").value = pt.join("");
+    document.getElementById("toEncrypt").value = pt.join("");
 }

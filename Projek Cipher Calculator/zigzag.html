@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>ROT13-ZigZag Calculator</title>
-    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="Style.css">
   </head>
   <body>
     
@@ -20,53 +20,49 @@
 
     <h1 class="judul">KALKULATOR CIPHER ROT13 & ZIG-ZAG</h1>
 
-
-    <div class="container">
-      <div class="grid-container full">
-        <div class="centered-column">
-          <h1 class="ROT13"><a href="index.html">ROT13</a></h1>
-          <h1 class="zigzag"><a href="zigzag.html">ZIGZAG</a></h1>
-          <div class="calc">
-            <div class="key-box">
-              <h6 class="key-text">Key : </h6>
-              <textarea name="" id="key" cols="30" rows="2" class="key-input"></textarea>
-            </div>
-            <div class="offset-box">
-              <h6 class="key-text">Offset :</h6>
-              <textarea name="" id="" cols="25" rows="2" class="offset-input"></textarea>
-            </div>
-            <div class="zencrypt-box">
-              <h3 class="zencrypt-textbox">Enkripsi</h3>
-              <div class="zgaris-encryptbox"></div>
-              <textarea placeholder="Tulis pesan yang akan dienkripsikan" id="myInput" class="zinput"></textarea>
-              <button class="button button-primary" onClick="Encrypt()" id="zbtn-en">Enkripsi</button>
-              <div class="zciphertext-hsl">
-                Ciphertext :             
-                <h4 id="myMessage" class="hasil"></h4>
-              </div>
-            </div>
-            <div class="zdecrypt-box">
-              <div class="centered-column">
-                <h3 class="zencrypt-textbox">Dekripsi</h3>
-                <div class="zgaris-encryptbox"></div>
-                <textarea class="zinput" id="toDecrypt" placeholder="Enter Message to Decrypt"></textarea>
-                <button class="button button-primary" onClick="Decrypt()" id="zbtn-en">Dekripsi</button>
-                <div class="zciphertext-hsl">
-                  Plaintext :             
-                  <h4 id="myDecryptedMessage" class="zhasil"></h4>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div class="cipher">
+      <h1 class="cipher-choice"><a href="ROT13.html" class="aa">ROT13</a> </h1>
+      <h1 class="cipher-choice"><a href="zigzag.html" class="aa active">ZIGZAG</a> </h1>
+    </div>
+    <div class="box-type">
+      <div class="text-type">
+        <h1 class="type-title" >Plaint Text</h1>
+        <input type="text" placeholder="Tulis Plaintext" id="toEncrypt" class="input">
+      </div>
+      <div class="text-type">
+        <h1 class="type-title">Cipher Text</h1>
+        <input type="text" placeholder="Tulis Ciphertext" id="toDecrypt" class="input">
+      </div>
+      <div class="input-key">
+        <p class="p-key">Key: </p>
+        <input placeholder="Key" type="text" id="key" class="box-key">
+      </div>
+      <div class="btn">
+        <button class="button button-primary" onClick="EncryptZigZag()" id="btn-en">Enkripsi ></button>
+        <button class="button button-primary" onClick="DecryptZigZag()" id="btn-en"> < Dekripsi</button>
       </div>
     </div>
-
+  
     <div class="information">
-      <h1 class="subjud">ZigZag</h1>
-      <p class="info-des">Enkripsi Rail Fence Cipher dilakukan dengan memasukkan Plaintext (Pt) ke tabel secara zigzag, hingga membentuk pola pagar rel (rail fence). Bentuk selalu simetris, bergantung pada nilai offset. Ciphertext (Ct) dibaca dengan acuan baris dari atas ke bawah.</p>
-      <img src="" alt="">
+      <h1 class="subjud">ZIGZAG</h1>
+      <div class="info-des">
+        <p>Rail Fence Cipher adalah salah satu teknik enkripsi untuk menyamarkan 
+          tulisan dengan mengubah posisi huruf atau karakter dengan bentuk diagonal ke bawah dan ke 
+          atas sehingga susunan aslinya tertukar. Bentuknya yang seperti zig-zag juga menyebabkan 
+          cipher ini dapat disebut Zig-Zag Cipher.
+        </p>
+        <p>
+          contoh ==> Plaintext = 'Leave The Money In The Brief Case' || Key = 2
+        </p>
+        <img src="ZIgzagDes.jpg" alt="">
+        <p>
+          Maka, Ciphertext dari Plaintext 'Leave The Money In The Brief Case' adalah:
+        </p>
+        <p>
+          LAE    HMN    YNH    BIF    AEE    VTE    OEI    TER    ECS
+        </p>
+      </div>
     </div>
   </body>
-  <script src='./zigzag.js'></script>
+  <script src="zigzag.js"></script>
 </html>
