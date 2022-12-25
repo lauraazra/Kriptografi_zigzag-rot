@@ -1,0 +1,76 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>ROT13-ZigZag Calculator</title>
+    <link rel="stylesheet" href="Style.css">
+  </head>
+  <body>
+    
+    <div class="navbar">
+      <a href="ROT13.html"><img src="Logo.png" alt="CalChip" class="logo-navbar"></a>
+      <div class="text-navbar">
+          <ul>
+              <li><a href="ROT13.html">Home</a></li>
+              <li><a href="rot13.html">Rot13</a></li>
+              <li><a href="zigzag.html">ZigZag</a></li>
+          </ul>
+      </div>
+    </div>
+
+    <h1 class="judul">KALKULATOR CIPHER ROT13 & ZIG-ZAG</h1>
+
+    <div class="cipher">
+      <h1 class="cipher-choice"><a href="ROT13.html" class="aa active">ROT13</a> </h1>
+      <h1 class="cipher-choice"><a href="zigzag.html" class="aa">ZIGZAG</a> </h1>
+    </div>
+    <div class="box-type">
+      <div class="text-type">
+        <h1 class="type-title" >Plaint Text</h1>
+        <input type="text" placeholder="Tulis Plaintext" id="toEncrypt" class="input">
+      </div>
+      <div class="text-type">
+        <h1 class="type-title">Cipher Text</h1>
+        <input type="text" placeholder="Tulis Ciphertext" id="toDecrypt" class="input">
+      </div>
+      <div class="btn">
+        <button class="button button-primary" onClick="encryptROT13()" id="btn-en">Enkripsi ></button>
+        <button class="button button-primary" onClick="decryptROT13()" id="btn-en"> < Dekripsi</button>
+      </div>
+    </div>
+  
+    <div class="information">
+      <h1 class="subjud">ROT 13</h1>
+      <div class="info-des">
+        <p>ROT 13 merupakan algoritma enkripsi sederhana yang 
+          menggunakan sandi abjad tunggal dengan pergeseran K=13. Sehingga huruf A 
+          diganti dengan N, B menjadi O.</p>
+        <img src="ROT13Des.jpg" alt="">
+        <p>contoh ==> Plaintext = 'Informatika'</p>
+        <p>Maka, Ciphertext yang dihasilkan dari Plaintext 'Informatika' adalah: </p>
+        <p>Vasbezngvxn</p>
+      </div>
+    </div>
+
+    <div class="foot">
+      <div class="stakeholder">
+        <p class="meet">Meet our team!</p>
+        <p><a class="name-team" href="https://www.instagram.com/lorazra/">Laura Azra Aprilyanti</a></p>
+        <p><a class="name-team" href="https://www.instagram.com/asd.safira/">Anna Safira Dila</a></p>
+        <p><a class="name-team" href="">Zahran Hanif Fathanmubin</a></p>
+      </div>
+      <div class="company">
+        <div class="foot-logo">
+          <img src="Logo.png" alt="" class="logo-foot">
+          <p class="company-name">CalcRotZig</p>
+        </div>
+        <div class="nav-foot">
+          <p ><a class="text-nav" href="ROT13.html">Home</a></p>
+          <p><a class="text-nav" href="ROT13.html">ROT13</a></p>
+          <p><a class="text-nav" href="ZIGZAG.html">ZigZag</a></p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src='ROT13.js'></script>
+</html>
